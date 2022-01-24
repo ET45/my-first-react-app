@@ -1,4 +1,4 @@
-const Title = () => {
-  return <h1>Hello there, General Kenobi</h1>;
+const Title = (probe) => {
+  return <h1>{probe.content}</h1>;
 };
 export default Title;
