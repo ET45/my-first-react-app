@@ -8,17 +8,21 @@ function App() {
   return (
     <div className="App">
       <main>
-        <Title content="My Title" />
-        {Pokedata.map((pokemon) => (
-          <Pokemon
-            name={pokemon.name}
-            picture={pokemon.picture}
-            weight={pokemon.weight}
-            awesome={pokemon.awesome}
-            terrifying={pokemon.terrifying}
-            abilities={pokemon.abilities}
-          />
-        ))}
+        <Title content="Pokemon Cards" />
+        <div className="row">
+          {Pokedata.map((pokemon, index) => (
+            <div key={index} className="col-md-6 col-lg-4">
+              <Pokemon
+                name={pokemon.name}
+                picture={pokemon.picture}
+                weight={pokemon.weight}
+                awesome={pokemon.awesome}
+                terrifying={pokemon.terrifying}
+                abilities={pokemon.abilities}
+              />
+            </div>
+          ))}
+        </div>
       </main>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />

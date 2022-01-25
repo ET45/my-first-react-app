@@ -1,20 +1,26 @@
-const Pokemon = (probs) => {
+const Pokemon = (props) => {
   return (
-    <div>
-      <h2>Pokemon name: {probs.name}</h2>
-      <p>
-        picture:
-        <img src={probs.picture} width={100} />
-      </p>
-      <p>Weight: {probs.weight} kg</p>
-      <p>Awesome: {probs.awesome ? "YES!" : "nope not Awesome"}</p>
-      <p>Terrifying: {probs.terrifying ? "Yep" : "Its alright"}</p>
-      <p>Abilities({probs.abilities.length}) </p>
-      <ul>
-        {probs.abilities.map((ability, index) => {
-          return <li key={index}>{ability}</li>;
-        })}
-      </ul>
+    <div className="card">
+      <div className="card-body">
+        <h5 className="card-title">Pokemon name: {props.name}</h5>
+        <p>
+          picture:
+          <img src={props.picture} width={100} />
+        </p>
+        <h6 className="card-subtitle">Weight: {props.weight} kg</h6>
+        <h6 className="card-subtitle">
+          Awesome: {props.awesome ? "YES!" : "nope not Awesome"}
+        </h6>
+        <h6 className="card-subtitle">
+          Terrifying: {props.terrifying ? "Yep" : "Its alright"}
+        </h6>
+        <p>Abilities({props.abilities.length}) </p>
+        <ul>
+          {props.abilities.map((ability, index) => {
+            return <li key={index}>{ability}</li>;
+          })}
+        </ul>
+      </div>
     </div>
   );
 };
